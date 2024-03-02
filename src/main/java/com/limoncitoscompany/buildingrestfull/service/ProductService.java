@@ -1,4 +1,4 @@
-package com.limoncitoscompany.buildingrestfull;
+package com.limoncitoscompany.buildingrestfull.service;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,5 +19,9 @@ public class ProductService {
   
     public List<Product> getAllProducts() {
         return products;
+    }
+
+    public Product getProduct(String id){
+        return products.stream().filter(p -> p.getId().equals(id)).findFirst().get();
     }
 }
